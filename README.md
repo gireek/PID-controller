@@ -2,6 +2,15 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Reflection 
+
+* The Kp is for steering in proportion to the distance from the required trajectory or the CTE(Cross track error). As it was increased the overshoot increased drastically and stability degreaded.
+* The Ki is the addition of all errors to mimic the way how a human driver would have handled the situation in which a car has a systematic bias or a so-called drift in the setting of the steering wheel.Increasing this lead to higher overshoot and lower stability.
+* The Kd is using the derivative of the present error i.e. based on its current rate of change it anticipates the future trend of the error, and thereby correcting it. This effectively dampens the oscillating effect. 
+
+I started with the values given at the end of class (0.2, 0.004 , 3). It worked perfectly in the first go so I thought of icreasing the throttle to 0.5 but numerous changes in parameters could not suffice.After reducing the throttle i altered the class hyperparameters and noticed the simulator did not have much of the systematic bias as I reduced it to 0.001 and still it worked fine but it did not work well when it was turned to 0.The Kp and Kd too were decreased to 0.1 and 2.0 respectively for more stability. 
+
+A major improvement would be to slow down at curves or writing a separate controller for throttle control.
 
 ## Dependencies
 
